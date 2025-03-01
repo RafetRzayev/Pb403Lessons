@@ -8,14 +8,14 @@
         public Storage()
         {
             //_products = [new Product("mi4", 23, Category.Watch), new Product("mac air", 23422, Category.Notebook)];
-            _products[0] = new Product("mi4", 23, Category.Watch);
-            _products[1] = new Product("mac air", 23422, Category.Notebook);
+            _products[0] = new Product("mi4", 23, Category.Watch, 12);
+            _products[1] = new Product("mac air", 23422, Category.Notebook, 5);
         }
 
         public void PrintProducts()
         {
             Console.WriteLine(new string('-', 60));
-            Console.WriteLine($"{"Id",-4}{"Name",-20} {"Price",-10} Category");
+            Console.WriteLine($"{"Id",-4}{"Name",-20} {"Price",-10} {"Category", -12} {"Stock", -4}");
 
             for (int i = 0; i < _size; i++)
             {
@@ -24,7 +24,7 @@
                 if (item == null) continue;
 
                 Console.WriteLine(new string('-', 60));
-                Console.WriteLine($"{item.Id, -4}{item.Name, -20 } {item.Price, -10} {item.Category}");
+                Console.WriteLine($"{item.Id, -4}{item.Name, -20 } {item.Price, -10} {item.Category, -12} {item.StockCount, -4}");
             }
 
             Console.WriteLine(new string('-', 60));
@@ -38,8 +38,10 @@
             decimal price = decimal.Parse(Console.ReadLine());
             Console.Write("Category:");
             int category = int.Parse(Console.ReadLine());
+            Console.Write("Stock count:");
+            int stockCount = int.Parse(Console.ReadLine());
 
-            var product = new Product(name, price, (Category)category);
+            var product = new Product(name, price, (Category)category, stockCount);
 
             if (_size >= _products.Length)
             {
@@ -120,18 +122,29 @@
                     continue;
                 }
 
+                if (product.StockCount < count)
+                {
+                    Console.WriteLine("Stockda yoxdur");
+
+                    continue;
+                }
+
                 basket.Add(product, count);
+                product.StockCount -= count;
             }
 
             basket.Print();
 
             if (basket.GetTotal() > user.Balance)
             {
+                basket.Recharge();
+
                 Console.WriteLine("Pulun catmir");
             }
             else
             {
                 Console.WriteLine("Ugurlar, yeniden gozleyirik");
+
             }
         }
 

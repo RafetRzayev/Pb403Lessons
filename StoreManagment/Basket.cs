@@ -30,6 +30,14 @@ namespace StoreManagment
             Console.WriteLine("Successfully added");
         }
 
+        public void Recharge()
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                _basketItems[i].Product.StockCount += _basketItems[i].Count;
+            }
+        }
+
         public void Print()
         {
             Console.WriteLine();
