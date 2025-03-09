@@ -90,7 +90,7 @@
                     return item;
             }
 
-            return new User("undefined", "undefined", (Role)2);
+            return default;
         }
     }
 }
