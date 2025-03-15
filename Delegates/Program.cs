@@ -5,6 +5,7 @@
         static void Main()
         {
             Console.WriteLine("I am dev new version");
+            Console.WriteLine("hhelo");
         }
         
         static string Capitalize(string word)
