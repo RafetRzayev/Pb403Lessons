@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            Console.WriteLine("I am master");
+            Console.WriteLine("I am dev");
         }
         
         static string Capitalize(string word)
