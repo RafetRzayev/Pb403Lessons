@@ -5,6 +5,8 @@ namespace TicTacToe
         private Button[,] _boxes = new Button[3, 3];
         private bool _xTurn = true;
         private bool _isStart = true;
+        private int _xScore = 0;
+        private int _oScore = 0;
 
         public Form1()
         {
@@ -42,6 +44,8 @@ namespace TicTacToe
 
             if (box.Text != "") return;
 
+            if (!_isStart) return;
+
             box.Text = _xTurn ? "X" : "O";
 
             _xTurn = !_xTurn;
@@ -59,7 +63,7 @@ namespace TicTacToe
                 {
                     lblResult.Text = $"{_boxes[i, 0].Text} win";
                     _isStart = false;
-                    BackColor = Color.Green;
+                    ChangeScore(_boxes[i, 0].Text);
 
                     return;
                 }
@@ -73,6 +77,7 @@ namespace TicTacToe
                 {
                     lblResult.Text = $"{_boxes[0, i].Text} win";
                     _isStart = false;
+                    ChangeScore(_boxes[0, i].Text);
 
                     return;
                 }
@@ -84,6 +89,7 @@ namespace TicTacToe
             {
                 lblResult.Text = $"{_boxes[0, 0].Text} win";
                 _isStart = false;
+                ChangeScore(_boxes[0, 0].Text);
 
                 return;
             }
@@ -92,6 +98,7 @@ namespace TicTacToe
             {
                 lblResult.Text = $"{_boxes[0, 2].Text} win";
                 _isStart = false;
+                ChangeScore(_boxes[0, 2].Text);
 
                 return;
             }
@@ -108,6 +115,7 @@ namespace TicTacToe
 
             lblResult.Text = "Draw";
             _isStart = false;
+            BackColor = Color.Yellow;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -116,17 +124,44 @@ namespace TicTacToe
                 return;
 
             lblResult.Text = "";
+            BackColor = Color.White;
 
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
                     _boxes[i, j].Text = "";
-                    _boxes[i, j].BackColor = Color.AntiqueWhite;
                 }
             }
 
             _isStart = true;
+        }
+
+        private void ChangeScore(string winner)
+        {
+            if (winner == "X")
+            {
+                _xScore++;
+
+                lblXScore.Text = $"X:{_xScore}";
+
+                BackColor = Color.Green;
+            }
+            else if (winner == "O")
+            {
+                _oScore++;
+
+                lblOScore.Text = $"O: {_oScore}";
+
+                BackColor = Color.Red;
+            }
+
+            if (_xScore >= 3)
+            {
+                MessageBox.Show("Hi");
+                _xScore = 0;
+                _oScore = 0;
+            }
         }
     }
 }

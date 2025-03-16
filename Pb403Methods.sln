@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{A87865C8-09B3-4B1B-81AE-6B3F560EB8DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{0BE7917E-3615-42CB-B7E2-F709E2E0F0F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movement", "Movement\Movement.csproj", "{27AB1B1E-EC76-4046-BC51-EE76000573DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{A87865C8-09B3-4B1B-81AE-6B3F560EB8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A87865C8-09B3-4B1B-81AE-6B3F560EB8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A87865C8-09B3-4B1B-81AE-6B3F560EB8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE7917E-3615-42CB-B7E2-F709E2E0F0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE7917E-3615-42CB-B7E2-F709E2E0F0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE7917E-3615-42CB-B7E2-F709E2E0F0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE7917E-3615-42CB-B7E2-F709E2E0F0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27AB1B1E-EC76-4046-BC51-EE76000573DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AB1B1E-EC76-4046-BC51-EE76000573DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AB1B1E-EC76-4046-BC51-EE76000573DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AB1B1E-EC76-4046-BC51-EE76000573DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,6 +30,8 @@
         {
             lblResult = new Label();
             btnStart = new Button();
+            lblXScore = new Label();
+            lblOScore = new Label();
             SuspendLayout();
             // 
             // lblResult
@@ -51,11 +53,31 @@
             btnStart.UseVisualStyleBackColor = true;
             btnStart.Click += btnStart_Click;
             // 
+            // lblXScore
+            // 
+            lblXScore.AutoSize = true;
+            lblXScore.Location = new Point(12, 107);
+            lblXScore.Name = "lblXScore";
+            lblXScore.Size = new Size(21, 20);
+            lblXScore.TabIndex = 2;
+            lblXScore.Text = "X:";
+            // 
+            // lblOScore
+            // 
+            lblOScore.AutoSize = true;
+            lblOScore.Location = new Point(321, 107);
+            lblOScore.Name = "lblOScore";
+            lblOScore.Size = new Size(23, 20);
+            lblOScore.TabIndex = 3;
+            lblOScore.Text = "O:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(383, 384);
+            Controls.Add(lblOScore);
+            Controls.Add(lblXScore);
             Controls.Add(btnStart);
             Controls.Add(lblResult);
             MaximizeBox = false;
@@ -70,5 +92,7 @@
 
         private Label lblResult;
         private Button btnStart;
+        private Label lblXScore;
+        private Label lblOScore;
     }
 }
